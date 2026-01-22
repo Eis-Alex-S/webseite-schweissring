@@ -1,0 +1,79 @@
+backend:
+  name: github
+  repo: DEIN_GITHUB_NAME/webseite-schweissring
+  branch: main
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "seiten"
+    label: "Seiten"
+    files:
+      - label: "Startseite"
+        name: "home"
+        file: "content/_index.md"
+        fields:
+          - {label: "Titel", name: "title", widget: "string"}
+          - {label: "Intro", name: "intro", widget: "text"}
+
+      - label: "Produkte"
+        name: "produkte"
+        file: "content/produkte/_index.md"
+        fields:
+          - {label: "Titel", name: "title", widget: "string"}
+          - {label: "Inhalt", name: "body", widget: "markdown"}
+
+      - label: "Service"
+        name: "service"
+        file: "content/service/_index.md"
+        fields:
+          - {label: "Titel", name: "title", widget: "string"}
+          - {label: "Inhalt", name: "body", widget: "markdown"}
+
+      - label: "Kontakt"
+        name: "kontakt"
+        file: "content/kontakt/_index.md"
+        fields:
+          - {label: "Titel", name: "title", widget: "string"}
+          - {label: "Inhalt", name: "body", widget: "markdown"}
+
+  - name: "daten"
+    label: "Listen"
+    files:
+      - label: "Aktionen & Kataloge"
+        name: "aktionen"
+        file: "data/aktionen.yaml"
+        fields:
+          - label: "Einträge"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Titel", name: "title", widget: "string"}
+              - {label: "Gültig bis", name: "valid_until", widget: "string", required: false}
+              - {label: "PDF / Link", name: "url", widget: "string"}
+
+      - label: "Partner"
+        name: "partner"
+        file: "data/partner.yaml"
+        fields:
+          - label: "Partner"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Adresse", name: "address", widget: "text"}
+              - {label: "Telefon", name: "phone", widget: "string", required: false}
+              - {label: "Website", name: "website", widget: "string", required: false}
+
+      - label: "Stellenangebote"
+        name: "jobs"
+        file: "data/jobs.yaml"
+        fields:
+          - label: "Jobs"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Titel", name: "title", widget: "string"}
+              - {label: "Ort", name: "location", widget: "string"}
+              - {label: "Link", name: "url", widget: "string", required: false}
