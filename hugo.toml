@@ -1,0 +1,7 @@
+baseURL = "/"
+languageCode = "de-de"
+title = "SCHWEISSRING"
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  company = "SCHWEISSRING"
